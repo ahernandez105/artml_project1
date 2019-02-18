@@ -1,45 +1,27 @@
-# Style Transfer
-Style Transfer with keras and tensorflow
 
-Based on:
-https://github.com/simulacre7/tensorflow-IPythonNotebook/tree/master/neural-style
+The following notebook was taken from the following AMI on aws: **Art_ML_02_01_2019 - ami-0d9c0acbc057a2acd.** Modifications 
+were made to enable seamless hyper parameter tuning while running 
+style transfer iterations. A style and content image is provided where a 
+loss function, using hidden layers from the VGG19 model, attempts to transfer
+an optimal amount of style to the content image. <br/> 
 
+Running the notebook is governed by the following configurations and hyperparameters:
+* trial_name: name of the trial being run 
+* content_file_name: content image (.png or .jpeg)
+* style_file_name: style image (.png or .jpeg)
+* iterations: the number of epochs before terminating style transfer run
+* total_variation_weight: ??
+* style weight: the amount of weight in the loss function allocated to the style image
+* content_weight: the amount of weight in the loss function allocated to the content image
+* content_features: hidden layer in VGG19 used to create content features
+* style_features: hidden layers in VGG19 used to create style features
 
-# neural style
+Fine tuning these parameters can be achieved through trial error and in the directory there is 
+file  _vgg19_layers.txt_ that list the layers you can substitute in an out for generating 
+features. <br/>
 
-An implementation of [neural style][paper] written in TensorFlow with IPythonNotebook.
-
-## Examples
-
-These were the input images used :
-
-![input-content](images/1-content.jpg)
-
-![input-style](images/1-style.jpg)
-
-This is the output produced by the algorithm:
-![output](images/output_1-content.jpg)
-
-## Details
-
-TensorFlow doesn't support [L-BFGS][l-bfgs] which is the original authors used.
-So we use [Adam][adam]. This may require a little bit more hyperparameter tuning to get nice results.
-
-you can get Pre-trained VGG network by
-
-`wget http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat`
+After the model is finished running a directory taking the name _trial_name_ will be created 
+where images from all iterations are stored. 
 
 
-## reference
-[A Neural Algorithm of Artistic Style (Leon A. Gatys, et al.)][paper]
-
-[Exploring the Neural Algorithm of Artistic Style (Yaroslav Nikulin, et al)][paper2]
-
-[paper]: http://arxiv.org/pdf/1508.06576v2.pdf
-[paper2]: http://arxiv.org/pdf/1602.07188v1.pdf
-[style]: http://www.ebsqart.com/Art-Galleries/Contemporary-Cubism/43/Cubist-9/204218/
-[rain]: https://afremov.com/RAIN-PRINCESS-Palette-knife-Oil-Painting-on-Canvas-by-Leonid-Afremov-Size-30-x30.html
-[UNIST]: http://www.studyinkorea.go.kr/en/sub/college_info/college_info.do?ei_code=562240
-[l-bfgs]: https://en.wikipedia.org/wiki/Limited-memory_BFGS
-[adam]: http://arxiv.org/abs/1412.6980
 
