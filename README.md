@@ -39,7 +39,10 @@ If you run into issues or want to run the notebook within AWS, you will need to 
 following lines of code:
 
 * Cell 38 (first cell) line 12
-* Cell 76 (last cell) the entire cell
+* Cell 76 (last cell) the entire cell <br\>
+
+Furthermore, navigating to scripts/ in this repo is a script similar to this notebook but can be ran over
+a batch of images and randomly selects hidden units to use for feature extraction. 
 
 
 
