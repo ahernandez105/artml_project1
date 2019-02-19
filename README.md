@@ -17,7 +17,6 @@ Running the notebook is governed by the following configurations and hyperparame
 * content_file_name: content image (.png or .jpeg)
 * style_file_name: style image (.png or .jpeg)
 * iterations: the number of epochs before terminating style transfer run
-* total_variation_weight: ??
 * style weight: the amount of weight in the loss function allocated to the style image
 * content_weight: the amount of weight in the loss function allocated to the content image
 * content_features: hidden layer in VGG19 used to create content features
